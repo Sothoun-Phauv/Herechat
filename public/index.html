@@ -1,94 +1,41 @@
+
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>App HereChat</title>
-    <link rel="stylesheet" href="css/style.css" />
+<!-- Created By CodingNepal -->
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <!-- <title>Popup Login Form Design | CodingNepal</title> -->
+    <link rel="stylesheet" href="css/code.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <script src="js/login.js" defer></script>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-    <script src="js/script.js" defer></script>
-</head>
-
-
-<body>
-    <div class="container">
-
-        <!-- contain login -->
-        <div class="contain-login">
-
+  </head>
+  <body>
+    <div class="center">
+      <input type="checkbox" id="show">
+      <label for="show" class="show-btn">Login Profile</label>
+      <div class="container">
+        <label for="show" class="close-btn fas fa-times" title="close"></label>
+        <div class="text">Here<span>Chat</span></div>
+              <form action="#">
+                <div class="data">
+                  <label>Name</label>
+                  <input type="text" required id="login-text">
+                </div>
+                <div class="data">
+                  <label>Password</label>
+                  <input type="password" required id="password">;
+                </div>
+                <div class="forgot-pass">
+                <a href="#">Forgot Password?</a></div>
+                  <div class="btn">
+                  <div class="inner">
+                </div>
+                <button type="submit" id="btn-login">login</button>
+               
+                <div class="signup-link">Not a member? <a href="#">Signup now</a></div>
+              </form>
+          </div>
         </div>
-
-
-        <!-- contain chat -->
-        <div class="contain-chat">
-            <div class="header-chat">
-                <img src="pictures/herechat.png" alt="please cheack internet">
-
-            </div>
-            <!--  border chat -->
-            <div class="border-chat">
-                <div class="chat-border1">
-                    <div class="chat-border2">
-                        <div class="chat-contener">
-                            <div class="message">
-                                <div class="message-row other-message">
-                                    <div class="message-title">
-                                        <div class="message-title" id="title1">
-                                            <span>Sothoun</span>
-                                        </div>
-                                        <div class="message-text">
-                                            <p>Hey,What are you  doing why did you don't join class brotehr I think you get or whqt is wrog with you I never thought you get sick because you're strong to fight with virus.</p>
-                                        </div>
-                                        <div class="message-text">
-                                            <p>Hey, Bro! Sometime I think you will get sick because you're busy with your work I know work is important, but you should think about your health first.
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="message-row your-message">
-                                    <div class="message-title">
-                                        <div class="message-title" id="title2">
-                                            <span>Somoun</span>
-                                        </div>
-                                        <div class="message-text">
-                                            <p>Hi, Bro! Dont be sad, I think when I'm alone Im never you are find the reason that make me happy.</p>
-                                            
-                                        
-                                        </div>
-                                        <div class="message-text">
-                                            <p>Hi, Bro! Dont be sad, I think when I'm alone Im never you are find the reason that make me happy.</p>
-                                            
-                                        
-                                        </div>
-                                        <div class="message-text">
-                                            <p>Hi, Bro! Dont be sad, I think when I'm alone Im never you are find the reason that make me happy.</p>
-                                            
-                                        
-                                        </div>
-                                        <div class="message-text">
-                                            <p>Hi, Bro! Dont be sad, I think when I'm alone Im never you are find the reason that make me happy.</p>
-                                            
-                                        
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-        
-                </div>
-            </div>
-
-
-            <div class="footer-chat">
-                <div class="text">
-                    <input type="text" name="" id="text" placeholder="Type a message">
-                </div>
-                <div class="send">
-                    <button>Send</button>
-                </div>
-            </div>
-        </div>
-    </div>
-</body>
+      </body>
 </html>
