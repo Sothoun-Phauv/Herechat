@@ -1,4 +1,4 @@
-const SERVER_PORT = 3000;
+const SERVER_PORT = 5000;
 const SERVER_IP = "192.168.88.13";
 const BASE_URL = "http://" + SERVER_IP + ":" + SERVER_PORT;
 
@@ -35,6 +35,7 @@ function loadMessages() {
 function sendMessage(event){
     event.preventDefault();
     let messagesData = {message: inputMessage.value};
+    console.log(messagesData);
     axios.post(GET_MESSAGES_URL, messagesData).then((res)=>{
         dispalyMessages(res.data);
         
@@ -44,16 +45,35 @@ function sendMessage(event){
 
 };
 
+// emoji function
+document.addEventListener('DOMContentLoaded', () =>{
+    picker.on('emoji', emoji =>{
+        document.querySelector('input').value += emoji;
+    });
+    sticker.addEventListener('click', () => {
+        picker.togglePicker(sticker);
+    });
+});
+
+/// get value from localstorage
+let itemOfuser= JSON.parse(localStorage.getItem('userlogin'));
+let value=''
+for (let item of itemOfuser){
+    value= item.name;
+}
+let userhearder = document.querySelector('.nameuser');
+userhearder.textContent = value;
+///main code
+
+const sticker = document.querySelector("#emoji");
+const picker = new EmojiButton();
+
 let inputMessage=document.querySelector("#text");
 
 let messageTitle=document.getElementById("title2");
 
 let sendButton = document.querySelector('button');
 sendButton.addEventListener('click', sendMessage);
-
-// login in the wall
-
-
 
 
 

@@ -2,6 +2,9 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
+    background-image:url('https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.desktopbackground.org%2Fwallpaper%2Fsnow-backgrounds-free-images-on-pixabay-17964&psig=AOvVaw0-DYCu0_tl2C1zz8feu8Bv&ust=1621999962755000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCOCcnury4_ACFQAAAAAdAAAAABAc') ;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 
@@ -22,6 +25,17 @@ body{
     height: 80px;
     background: rgb(33, 168, 168);
     border-radius: 6px;
+    display: flex;
+}
+.header-chat
+.nameuser{
+    margin-left: 54%;
+    margin-top: 25px;
+    text-align: center;
+    color: red;
+    font-weight: bold;
+    font-size: 27px;
+    text-shadow: 2px 2px rgb(12, 240, 80);
 }
 img{
     width: 150px;
@@ -40,7 +54,7 @@ img{
     
 }
 #text{
-    width: 440px;
+    width: 420px;
     height: 55px;
     background: white;
     font-size: 25px;
@@ -48,13 +62,24 @@ img{
 }
 button{
     height: 60px;
-    width: 120px;
-    background: white;
+    width: 90px;
+    background: rgb(23, 146, 7);
     margin-left: 10px;
     border-radius: 5px;
     font-size:25px ;
 }
 
+#img{
+    height: 40px;
+    width: 60px;
+    
+}
+#emoji{
+    font-size: 40px;
+}
+#emoji:hover{
+    cursor: pointer;
+}
 
 
 .chat-border1{

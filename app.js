@@ -1,9 +1,9 @@
 const express = require("express");
 const app = express();
-const SERVER_PORT = 3000;
+const SERVER_PORT = 5000;
 app.use(express.static("public"));
 app.use(express.json());
-app.listen(SERVER_PORT, function () {
+app.listen( process.env.PORT || SERVER_PORT, function () {
     console.log("listening on : " + SERVER_PORT);
 });
 
