@@ -10,8 +10,8 @@ app.listen( process.env.PORT || SERVER_PORT, function () {
 // Datas....
 const messagesData = [];
 const userName = [
-    {username:'sothoun',password: "1234"},
-    {username:'somoun',password: "1111"}
+    {username:'Sothoun',password: "1234"},
+    {username:'Somoun',password: "1111"}
 ]
 
 // get input  from client send push to datas..

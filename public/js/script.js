@@ -6,7 +6,7 @@ const GET_MESSAGES_URL = BASE_URL +'/messages';
 
 //.this function use to get message from server and then display to live server
 function dispalyMessages(messages) {
-    let list_message = document.querySelector('.list-text');
+    // let list_message = document.querySelector('.list-text');
     if(list_message !== null){
         list_message.remove();
     }
@@ -18,10 +18,18 @@ function dispalyMessages(messages) {
         let messageText = document.createElement('p');
         messageText.className="message-text";
         messageText.textContent = value.message;
-
+        list_user.textContent = value.users;
+        if (value.users==="Sothoun"){
+            list_message.appendChild(messageText);
+            messageText.style.background ='red';
+            messageTitle.appendChild(list_message);
+            
+        }
         list_message.appendChild(messageText);
         messageTitle.appendChild(list_message);
     }
+        
+    
 
 };
 
@@ -34,7 +42,7 @@ function loadMessages() {
 //this function user to add date to server........
 function sendMessage(event){
     event.preventDefault();
-    let messagesData = {message: inputMessage.value};
+    let messagesData = {users:value,message: inputMessage.value};
     console.log(messagesData);
     axios.post(GET_MESSAGES_URL, messagesData).then((res)=>{
         dispalyMessages(res.data);
@@ -71,6 +79,9 @@ const picker = new EmojiButton();
 let inputMessage=document.querySelector("#text");
 
 let messageTitle=document.getElementById("title2");
+
+let list_message = document.querySelector('.list-text');
+let list_user= document.querySelector('.user');
 
 let sendButton = document.querySelector('button');
 sendButton.addEventListener('click', sendMessage);
