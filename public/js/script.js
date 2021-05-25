@@ -1,8 +1,8 @@
-const SERVER_PORT = 5000;
-const SERVER_IP = "192.168.88.13";
-const BASE_URL = "http://" + SERVER_IP + ":" + SERVER_PORT;
+// const SERVER_PORT = 5000;
+// const SERVER_IP = "192.168.88.13";
+// const BASE_URL = "http://" + SERVER_IP + ":" + SERVER_PORT;
 
-const GET_MESSAGES_URL = BASE_URL +'/messages';
+const GET_MESSAGES_URL = "https://here-chat.herokuapp.com" +'/messages';
 
 //.this function use to get message from server and then display to live server
 function dispalyMessages(messages) {
