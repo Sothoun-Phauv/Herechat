@@ -1,9 +1,10 @@
-// const SERVER_PORT = 5000;
-// const SERVER_IP = "192.168.88.13";
-// const BASE_URL = "http://" + SERVER_IP + ":" + SERVER_PORT;
+const SERVER_PORT = 5000;
+const SERVER_IP = "192.168.88.13";
+const BASE_URL = "http://" + SERVER_IP + ":" + SERVER_PORT;
 
-const GET_MESSAGES_URL = "https://here-chat.herokuapp.com" + '/messages';
+const GET_MESSAGES_URL = BASE_URL + '/messages';
 
+//"https://here-chat.herokuapp.com"
 //.this function use to get message from server and then display to live server
 function dispalyMessages(messages) {
     // let list_message = document.querySelector('.list-text');
@@ -20,7 +21,7 @@ function dispalyMessages(messages) {
         messageText.textContent = value.message;
         list_user.textContent = value.users;
         
-        if (value.users === "Sothoun") {
+        if (value.users === itemOfuser) {
             messageText.style.background = 'red';
         }
 
@@ -63,8 +64,9 @@ document.addEventListener('DOMContentLoaded', () => {
 let itemOfuser = JSON.parse(localStorage.getItem('userlogin'));
 let value = ''
 for (let item of itemOfuser) {
-    value = item.name;
+    value += item;
 }
+
 let userhearder = document.querySelector('.nameuser');
 userhearder.textContent = value;
 ///main code

@@ -2,9 +2,7 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
-    background-image:url('https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.desktopbackground.org%2Fwallpaper%2Fsnow-backgrounds-free-images-on-pixabay-17964&psig=AOvVaw0-DYCu0_tl2C1zz8feu8Bv&ust=1621999962755000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCOCcnury4_ACFQAAAAAdAAAAABAc') ;
-    background-repeat: no-repeat;
-    background-size: cover;
+    
 }
 
 
@@ -70,7 +68,7 @@ button{
 }
 
 #img{
-    height: 40px;
+    height: 50px;
     width: 60px;
     
 }

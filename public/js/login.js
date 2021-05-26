@@ -1,10 +1,10 @@
 
 
-// const SERVER_PORT = 5000;
-// const SERVER_IP = "192.168.88.13";
-// const BASE_URL = "http://" + SERVER_IP + ":" + SERVER_PORT;
+const SERVER_PORT = 5000;
+const SERVER_IP = "192.168.88.13";
+const BASE_URL = "http://" + SERVER_IP + ":" + SERVER_PORT;
 
-const BASE_URL = "https://here-chat.herokuapp.com";
+// const BASE_URL = "https://here-chat.herokuapp.com";
 
 
 function Login() {
@@ -20,7 +20,7 @@ function Login() {
     }) 
     dataOflogin.push(dataFromLogin);
     console.log(dataOflogin);
-    localStorage.setItem('userlogin', JSON.stringify(dataOflogin));
+    localStorage.setItem('userlogin', JSON.stringify(dataFromLogin.name));
     
 }
 let dataOflogin=[];
