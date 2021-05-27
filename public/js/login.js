@@ -1,7 +1,7 @@
 
 
-const SERVER_PORT = 5000;
-const SERVER_IP = "192.168.88.13";
+const SERVER_PORT = 3000;
+const SERVER_IP = "192.168.88.32";
 const BASE_URL = "http://" + SERVER_IP + ":" + SERVER_PORT;
 
 // const BASE_URL = "https://here-chat.herokuapp.com";

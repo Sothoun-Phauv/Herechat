@@ -1,5 +1,5 @@
-const SERVER_PORT = 5000;
-const SERVER_IP = "192.168.88.13";
+const SERVER_PORT = 3000;
+const SERVER_IP = "192.168.88.32";
 const BASE_URL = "http://" + SERVER_IP + ":" + SERVER_PORT;
 
 const GET_MESSAGES_URL = BASE_URL + '/messages';
@@ -24,6 +24,17 @@ function dispalyMessages(messages) {
         if (value.users === itemOfuser) {
             messageText.style.background = 'red';
         }
+        if(value.bold === true){
+            messageText.style.fontWeight = 'bold';
+        }else{
+            messageText.style.fontWeight = 'normal';
+        }
+
+        if(value.italic === true){
+            messageText.style.fontStyle = 'italic';
+        }else{
+            messageText.style.fontStyle = 'normal';
+        }
 
         list_message.appendChild(messageText);
         messageTitle.appendChild(list_message);
@@ -39,15 +50,15 @@ function loadMessages() {
 //this function user to add date to server........
 function sendMessage(event) {
     event.preventDefault();
-    let messagesData = { users: value, message: inputMessage.value };
-    console.log(messagesData);
+    let messagesData = { users: value, message: inputMessage.value, bold:foundBold,italic:foundItalic };
+    
     axios.post(GET_MESSAGES_URL, messagesData).then((res) => {
         dispalyMessages(res.data);
 
     })
 
     inputMessage.value = "";
-
+    // fs.writeFileSync("message.json", JSON.stringify(messagesData));
 };
 
 // emoji function
@@ -69,6 +80,37 @@ for (let item of itemOfuser) {
 
 let userhearder = document.querySelector('.nameuser');
 userhearder.textContent = value;
+
+
+//// ........function bold........... ////
+let foundBold = false;
+let nBold = 0;
+function bold(event){
+    nBold++;
+    if (nBold %2 !==0){
+        foundBold = true;
+        inputMessage.style.fontWeight ='bold';
+    }else{
+        inputMessage.style.fontWeight = 'normal';
+        foundBold = false;
+    }
+    
+}
+
+//// ////............function italic............. //////////
+let foundItalic = false;
+let nItalic = 0;
+function italic(event){
+    nItalic++;
+    if (nItalic %2 !==0){
+        foundItalic=true;
+        inputMessage.style.fontStyle ='italic';
+    }else{
+        inputMessage.style.fontStyle = 'normal';
+        foundItalic = false;
+    }
+    
+}
 ///main code
 
 const sticker = document.querySelector("#emoji");
@@ -84,6 +126,10 @@ let list_user = document.querySelector('.user');
 let sendButton = document.querySelector('button');
 sendButton.addEventListener('click', sendMessage);
 
+let btnBold = document.querySelector('.bold');
+btnBold.addEventListener('click',bold);
+let btnItalic = document.querySelector('.italic');
+btnItalic.addEventListener('click',italic);
 
 
 // When page is loaded:

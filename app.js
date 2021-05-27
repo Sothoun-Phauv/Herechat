@@ -1,6 +1,9 @@
+const fs = require('fs');
+
+
 const express = require("express");
 const app = express();
-const SERVER_PORT = 5000;
+const SERVER_PORT = 3000;
 app.use(express.static("public"));
 app.use(express.json());
 app.listen( process.env.PORT || SERVER_PORT, function () {
@@ -18,8 +21,8 @@ const userName = [
 app.post("/messages", (req, res) => {
     let item = req.body;
     messagesData.push(item);
+    fs.writeFileSync('messages.json',JSON.stringify(messagesData));
     res.send(messagesData);
-    console.log(messagesData);
 
 })
 
@@ -33,10 +36,15 @@ app.post("/login",(req,res)=>{
     let name = req.body.name;
     let password = req.body.password;
     let isValid = false;
+    let userContain=[]
     for (user of userName) {
         if (user.username === name && user.password === password) {
             isValid = true;
+            userContain.push(user);
         }
+        console.log(userContain);
+        fs.writeFileSync('users.json',JSON.stringify(userContain));
     }
     res.send(isValid);
+    
 })

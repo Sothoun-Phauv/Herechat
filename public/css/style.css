@@ -52,25 +52,35 @@ img{
     
 }
 #text{
-    width: 420px;
-    height: 55px;
+    width: 360px;
+    height: 50px;
     background: white;
     font-size: 25px;
     border-radius: 5px;
+    outline: none;
 }
 button{
-    height: 60px;
-    width: 90px;
-    background: rgb(23, 146, 7);
-    margin-left: 10px;
+    
+    height: 55px;
+    width: 65px;
     border-radius: 5px;
-    font-size:25px ;
+    font-size:20px ;
+}
+#bold{
+    width: 45px;
+    height: 45px;
+    margin-top: 4px;
+}
+#italic{
+    width: 48px;
+    height: 48px;
+    margin-top: 3px;
 }
 
 #img{
     height: 50px;
-    width: 60px;
-    
+    width: 50px;
+    margin-right: 10px;
 }
 #emoji{
     font-size: 40px;
